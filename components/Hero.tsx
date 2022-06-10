@@ -42,23 +42,20 @@ function Hero({}: Props) {
   const side = useBreakpointValue({ base: "30%", md: "40px" });
 
   const cards = [
+    // {
+    //   title: "",
+    //   text: "",
+    //   image: "/brooke-cagle-TiTU0k1E0UE-unsplash.jpg",
+    // },
     {
-      title: "Product advert one",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        "https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      title: "",
+      text: "",
+      image: "/bruno-kelzer-LvySG1hvuzI-unsplash.jpg",
     },
     {
-      title: "Product advert two",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        "https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80",
-    },
-    {
-      title: "Product advert three",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        "https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      title: "",
+      text: "",
+      image: "/ecommerce-2140603_1920.jpg",
     },
   ];
   return (
@@ -209,14 +206,20 @@ function Hero({}: Props) {
             <Box
               key={index}
               height={"6xl"}
-              position="relative"
-              backgroundPosition="center"
-              backgroundRepeat="no-repeat"
-              backgroundSize="cover"
-              backgroundImage={`url(${card.image})`}
+              w={"full"}
+              // objectFit="contain"
+              // // position="relative"
+              // backgroundPosition="center"
+              // backgroundRepeat="no-repeat"
+              // backgroundSize="cover"
+              // backgroundImage={`url(${card.image})`}
               borderRadius="10px"
             >
-              {/* This is the block you need to change, to customize the caption */}
+              <img
+                src={card.image}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
               <Container size="container.lg" height="600px" position="relative">
                 <Stack
                   spacing={6}

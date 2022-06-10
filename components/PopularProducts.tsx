@@ -97,6 +97,7 @@ function Feature({ title, desc, ...rest }) {
     <Box
       bg="gray.100"
       width={"400px"}
+      min-height={"300px"}
       p={5}
       shadow="md"
       borderWidth="1px"
@@ -115,7 +116,7 @@ function ProductSimple({ image }) {
       <Box
         role={"group"}
         p={6}
-        maxW={"310px"}
+        maxW={"280px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"2xl"}

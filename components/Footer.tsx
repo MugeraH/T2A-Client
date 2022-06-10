@@ -52,7 +52,7 @@ function Footer({}: Props) {
             <Link href={"#"}>About us</Link>
             <Link href={"#"}>Blog</Link>
             <Link href={"#"}>Contact us</Link>
-            <Link href={"#"}>Pricing</Link>
+            {/* <Link href={"#"}>Pricing</Link> */}
             <Link href={"#"}>Testimonials</Link>
           </Stack>
           <Stack align={"flex-start"}>
@@ -61,7 +61,7 @@ function Footer({}: Props) {
             <Link href={"#"}>Terms of Service</Link>
             <Link href={"#"}>Legal</Link>
             <Link href={"#"}>Privacy Policy</Link>
-            <Link href={"#"}>Satus</Link>
+     
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Stay up to date</ListHeader>

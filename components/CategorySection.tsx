@@ -17,7 +17,7 @@ type Props = {};
 function CategorySection({}: Props) {
   return (
     <>
-      <Box height={"500px"} mt={5} p={30} bg="#fff">
+      <Box min-height={"500px"} mt={5} p={30} bg="#fff">
         <Stack align={"start"} spacing={3}>
           <Heading
             color={"#1a1a1a"}
@@ -36,33 +36,18 @@ function CategorySection({}: Props) {
             px={8}
             wrap="wrap"
             gap={8}
-          
             justifyContent={"space-between"}
           >
             <Feature
-              title="Auot Motorcylces Parts and Accessories"
-              desc="The future can be even brighter but a goal without a plan is just a wish"
+              title="Auto Motorcylces Parts and Accessories"
+              desc=""
+              image="/carimage.jpeg"
             />{" "}
-            <Feature
-              title="Furniture"
-              desc="The future can be even brighter but a goal without a plan is just a wish"
-            />{" "}
-            <Feature
-              title="Kitchenware"
-              desc="The future can be even brighter but a goal without a plan is just a wish"
-            />
-            <Feature
-              title="Apparel"
-              desc="The future can be even brighter but a goal without a plan is just a wish"
-            />
-            <Feature
-              title="Beddings"
-              desc="The future can be even brighter but a goal without a plan is just a wish"
-            />
-            <Feature
-              title="Art and Deco"
-              desc="The future can be even brighter but a goal without a plan is just a wish"
-            />
+            <Feature title="Furniture" image="/furniture.png" desc="" />{" "}
+            <Feature title="Kitchenware" image="/kitchenwr.png" desc="" />
+            <Feature title="Apparel" image="clothes.jpeg" desc="" />
+            <Feature title="Beddings" image="/beddings.jpeg" desc="" />
+            <Feature title="Art and Deco" image="deco.jpeg" desc="" />
           </Flex>
         </Stack>
       </Box>
@@ -73,19 +58,21 @@ function CategorySection({}: Props) {
 export default CategorySection;
 
 // @ts-ignore
-function Feature({ title, desc, ...rest }) {
+function Feature({ title, image, desc, ...rest }) {
   return (
     <Box
       bg="gray.100"
-      width={"400px"}
+      width={"300px"}
+      alignItems={"center"}
       p={5}
       shadow="md"
       borderWidth="1px"
       borderRadius="5px"
       {...rest}
     >
-      <Heading fontSize="xl">{title}</Heading>
-      <Text mt={4}>{desc}</Text>
+      <img  src={image} alt={title} />
+      <Heading fontSize="xl" >{title}</Heading>
+      {/* <Text mt={4}>{desc}</Text> */}
     </Box>
   );
 }

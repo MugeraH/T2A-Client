@@ -6,7 +6,6 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      {/* @ts-ignore */}
       <Component {...pageProps} />
     </ChakraProvider>
   );

@@ -16,15 +16,18 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-type Props = {};
+type Props = {
+  productTitle: string;
+  // @ts-ignore
+  products: [{}];
+  productImage: string;
+};
 
-function ProductSection({}: Props) {
-  const IMAGE =
-    "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80";
+function ProductSection({ productTitle, products, productImage }: Props) {
   return (
     <>
       {" "}
-      <Box height={"650px"} p={30} bg="white">
+      <Box min-height={"650px"} p={30}>
         <Stack align={"start"} spacing={3}>
           {/* <Heading
             color={"#1a1a1a"}
@@ -56,23 +59,15 @@ function ProductSection({}: Props) {
               py={2}
               m={0}
             >
-              <Text fontSize="4xl">Auto</Text>
+              <Text fontSize="4xl">{productTitle}</Text>
               {/* <Link as={Button} href="https://chakra-ui.com" isExternal>
                 Explore
               </Link> */}
-              <Button
-                as={Link}
-                href="/products"
-                color="white"
-                bg="blue.300"
-              >
+              <Button as={Link} href="/products" color="white" bg="blue.300">
                 Explore
               </Button>
               <Box>
-                <img
-                  src="https://images.unsplash.com/photo-1590621500362-afc1311f6019?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTF8OTcwODAzOTV8fGVufDB8fHx8&auto=format&fit=crop&w=500"
-                  alt=" carparts"
-                />
+                <img src={productImage} alt={productTitle} />
               </Box>
             </Flex>
 
@@ -85,30 +80,17 @@ function ProductSection({}: Props) {
                 justifyContent={"space-between"}
                 alignItems={"center"}
               >
-                <Feature
-                  title="Spare parts"
-                  desc="The future can be even brighter but a goal without a plan is just a wish"
-                />{" "}
-                <Feature
-                  title="Spare parts"
-                  desc="The future can be even brighter but a goal without a plan is just a wish"
-                />{" "}
-                <Feature
-                  title="Spare parts"
-                  desc="The future can be even brighter but a goal without a plan is just a wish"
-                />{" "}
-                <Feature
-                  title="Spare parts"
-                  desc="The future can be even brighter but a goal without a plan is just a wish"
-                />{" "}
-                <Feature
-                  title="Spare parts"
-                  desc="The future can be even brighter but a goal without a plan is just a wish"
-                />{" "}
-                <Feature
-                  title="Spare parts"
-                  desc="The future can be even brighter but a goal without a plan is just a wish"
-                />{" "}
+                {products.map((product, index) => (
+                  <Feature
+                    key={index}
+                    // @ts-ignore
+                    title={product.product_name}
+                    // @ts-ignore
+                    image={product.product_image}
+                    // @ts-ignore
+                    desc={product.product_description}
+                  />
+                ))}
               </Flex>
             </Box>
           </Flex>
@@ -154,11 +136,11 @@ function ProductSection({}: Props) {
 export default ProductSection;
 
 // @ts-ignore
-function Feature({ title, desc, ...rest }) {
+function Feature({ title, image, desc, ...rest }) {
   return (
     <Box
       bg="gray.100"
-      width={"300px"}
+      width={"270px"}
       height="200px"
       px={5}
       shadow="md"
@@ -173,8 +155,8 @@ function Feature({ title, desc, ...rest }) {
       <Box height="150px">
         <img
           style={{ height: "100%", margin: "auto" }}
-          src="https://images.unsplash.com/photo-1590621500362-afc1311f6019?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTF8OTcwODAzOTV8fGVufDB8fHx8&auto=format&fit=crop&w=500"
-          alt=" carparts"
+          src={image}
+          alt={title}
         />
       </Box>
     </Box>

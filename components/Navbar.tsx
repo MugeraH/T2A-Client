@@ -44,7 +44,19 @@ function Navbar({}: Props) {
               Account
             </Box>
 
-            <Box>$USD</Box>
+            <Box>
+              $USD
+              {/* <Select
+             
+              variant="filled"
+              placeholder="Category"
+              bg="white"
+            >
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </Select> */}
+            </Box>
           </HStack>
         </Flex>
       </Box>
@@ -62,21 +74,23 @@ function Navbar({}: Props) {
             color={"white"}
             fontWeight={700}
             fontSize={{ base: "2xl", sm: "2xl", md: "2xl" }}
+            flex={"1"}
           >
             T2A
           </Box>
           <Box
             style={{
               display: "flex",
-              gap: "5px",
+              gap: "3px",
+              flex: "2",
             }}
           >
             <Input
               bg="white"
               variant="filled"
-              placeholder="Search for products"
+              placeholder="Search for products,categories and suppliers"
             />
-            <Select
+            {/* <Select
               width="200px"
               variant="filled"
               placeholder="Category"
@@ -85,22 +99,29 @@ function Navbar({}: Props) {
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
               <option value="option3">Option 3</option>
-            </Select>
+            </Select> */}
             <Button bg="gray.800">
               {" "}
               <SearchIcon color="white" />
             </Button>
           </Box>
-          <Flex alignItems="center" gap="10px" color="white">
+          <Box
+            flex={"1"}
+            as={Flex}
+            alignItems="center"
+            justifyContent={"flex-end"}
+            gap="10px"
+            color="white"
+          >
             <Box style={{ display: "flex" }}>
               <BiHeart size={30} color="white" />
-              <span>0</span>
+              <span style={{ paddingBottom: "0px", display: "none" }}>0</span>
             </Box>
             <Box style={{ display: "flex" }}>
               <BsCartFill size={30} color="white" />
-              <span>0</span>
+              <span style={{ paddingBottom: "0px", display: "none" }}>0</span>
             </Box>
-          </Flex>
+          </Box>
         </Flex>
       </Box>
     </Box>
